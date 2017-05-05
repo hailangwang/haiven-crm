@@ -7,7 +7,7 @@
     			">
 
     <!-- dataSourceproxy 配置代理管理事务 -->
-    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy" p:targetDataSource-ref="dynamicDataSource" />-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy" p:targetDataSource-ref="dynamicDataSource" />
 
 
 
@@ -77,6 +77,30 @@
             </list>
         </property>
     </bean>
+
+    <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+        <property name="resultSetLogEnabled" value="false" />
+    </bean>
+
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="/WEB-INF/conf/mybatis.xml"></property>
+        <property name="mapperLocations" value="classpath:"></property>
+        <property name="dataSource" value="dataSource"></property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+        <!--部分错误 全局回滚-->
+        <!--<property name="globalRollbackOnParticipationFailure" value="false" />-->
+    </bean>
+
+    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+         <property name="transactionManager" ref="transactionManager"></property>
+
+
+    </bean>
+
 
 
 </beans>

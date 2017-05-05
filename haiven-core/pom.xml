@@ -11,6 +11,18 @@
 
     <artifactId>haiven-core</artifactId>
     <packaging>jar</packaging>
+    <!--<properties>-->
+        <!--<druid-version>1.0.8</druid-version>-->
+    <!--</properties>-->
+
+
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>druid</artifactId>-->
+            <!--<version>${druid-version}</version>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
 
 
 </project>
