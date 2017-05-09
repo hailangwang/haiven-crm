@@ -28,35 +28,36 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <profiles>
-        <profile>
-            <!-- 本地开发环境 -->
-            <id>development</id>
-            <properties>
-                <profiles.active>development</profiles.active>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <!-- 测试环境 -->
-            <id>release</id>
-            <properties>
-                <profiles.active>release</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <!-- 生产环境 -->
-            <id>production</id>
-            <properties>
-                <profiles.active>production</profiles.active>
-            </properties>
-        </profile>
-    </profiles>
 
 
     <build>
         <finalName>haiven-depoly</finalName>
+        <resources>
+
+            <resource>
+                <directory>src/main/resources/${profiles.active}</directory>
+                <excludes></excludes>
+            </resource>
+
+        </resources>
+        <plugins>
+          <!--  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/resources/development</directory>
+                            <filtering>true</filtering>
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>-->
+
+        </plugins>
+
+
     </build>
 </project>

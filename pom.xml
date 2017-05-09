@@ -11,6 +11,7 @@
         <module>haiven-deploy</module>
         <module>haiven-core</module>
         <module>haiven-login</module>
+        <module>haiven-easyui</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -163,7 +164,73 @@
 
           </dependencies>
 
-     <!--</dependencyManagement>-->
+    <profiles>
+        <profile>
+            <!-- 本地开发环境 -->
+            <id>development</id>
+            <properties>
+                <profiles.active>development</profiles.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- 测试环境 -->
+            <id>release</id>
+            <properties>
+                <profiles.active>release</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 生产环境 -->
+            <id>production</id>
+            <properties>
+                <profiles.active>production</profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!--</dependencyManagement>-->
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/resources/development</directory>
+                            <filtering>true</filtering>
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>*/src/main/resources</directory>
+                            <excludes>
+                                <exclude>release/*</exclude>
+                                <exclude>production/*</exclude>
+                                <exclude>development/*</exclude>
+                            </excludes>
+                            <targetPath></targetPath>
+                            <!--<targetPath>pages</targetPath>-->
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 
 </project>
