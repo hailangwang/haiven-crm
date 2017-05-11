@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/mvc
+                          http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                          http://www.springframework.org/schema/context
+                          http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+
+       <mvc:default-servlet-handler/>
+       <mvc:annotation-driven>
+              <mvc:message-converters>
+                     <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                            <constructor-arg value="UTF-8"/>
+                            <property name="writeAcceptCharset" value="false"/>
+                     </bean>
+              </mvc:message-converters>
+       </mvc:annotation-driven>
+
+
+       <mvc:interceptors>
+              <mvc:interceptor>
+                     <mvc:mapping path="/*"/>
+                     <bean class="com.fx.login.interceptor.LoginInterceptor">
+
+                     </bean>
+              </mvc:interceptor>
+       </mvc:interceptors>
+
+       <context:component-scan base-package="com.fx"/>
+       <!--  开启注解-->
+       <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+       <bean  class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+
+
+       <!-- 对模型视图添加前后缀 -->
+       <bean id="viewResolver"
+             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="prefix" value="/pages/"></property>
+              <property name="suffix" value=".jsp"></property>
+       </bean>
+       <!--加载properties文件-->
+       <context:property-placeholder location="/WEB-INF/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
+
+       <import resource="spring/spring-jdbc.xml"></import>
+
+</beans>

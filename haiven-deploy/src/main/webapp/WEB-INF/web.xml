@@ -76,7 +76,7 @@
 <!--资源过滤器-->
 <filter>
     <filter-name>webFilter</filter-name>
-    <filter-class></filter-class>
+    <filter-class>com.fx.core.filter.WebFilter</filter-class>
 </filter>
 <filter-mapping>
     <filter-name>webFilter</filter-name>
