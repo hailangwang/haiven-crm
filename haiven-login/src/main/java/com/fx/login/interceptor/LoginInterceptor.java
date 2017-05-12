@@ -21,6 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         if(ignoreURL!=null && ignoreURL.size()>0){
 
+            System.out.println(httpServletRequest.getRequestURI());
 
         }
         return true;

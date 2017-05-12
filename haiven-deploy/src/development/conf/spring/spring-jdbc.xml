@@ -33,7 +33,7 @@
         <property name="maxActive" value="${maxActive}" />
         <property name="initialSize" value="${initialSize}" />
         <property name="maxWait" value="${maxWait}" />
-        <property name="minIdle" value="${minIdle}" />
+        <!--<property name="minIdle" value="${minIdle}" />-->
         <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
         <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
         <property name="validationQuery" value="${validationQuery}" />
@@ -60,7 +60,7 @@
         <property name="maxActive" value="${maxActive}" />
         <property name="initialSize" value="${initialSize}" />
         <property name="maxWait" value="${maxWait}" />
-        <property name="minIdle" value="${minIdle}" />
+        <!--<property name="minIdle" value="${minIdle}" />-->
         <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
         <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
         <property name="validationQuery" value="${validationQuery}" />
@@ -85,8 +85,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="/WEB-INF/conf/mybatis.xml"></property>
-        <property name="mapperLocations" value="classpath:"></property>
-        <property name="dataSource" value="dataSource"></property>
+        <property name="mapperLocations" value="classpath*:com/fx/**/mybatis/*.xml"></property>
+        <property name="dataSource" ref="dataSource"></property>
     </bean>
 
     <!---->

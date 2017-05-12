@@ -13,7 +13,8 @@ public class LoginFilter implements Filter {
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-
+        System.out.println("进入过滤器");
+        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     public void destroy() {

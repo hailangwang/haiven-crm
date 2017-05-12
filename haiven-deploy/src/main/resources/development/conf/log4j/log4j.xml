@@ -13,7 +13,7 @@
 	 </appender>
 	<!-- 正常的日记文件INFO  WARN  -->
 	<appender name="Access" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="D:/logs/crm.log" />
+		<param name="File" value="S:/private/logs/crm.log" />
 		<param name="Append" value="false" />
 		<param name="maxFileSize" value="50MB" />
 		<param name="maxBackupIndex" value="100" />

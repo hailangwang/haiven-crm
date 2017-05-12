@@ -33,18 +33,18 @@
        </mvc:interceptors>
 
        <context:component-scan base-package="com.fx"/>
-       <!--  开启注解-->
+<!--开启注解-->
        <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
        <bean  class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
 
 
-       <!-- 对模型视图添加前后缀 -->
+
        <bean id="viewResolver"
              class="org.springframework.web.servlet.view.InternalResourceViewResolver">
               <property name="prefix" value="/pages/"></property>
               <property name="suffix" value=".jsp"></property>
        </bean>
-       <!--加载properties文件-->
+
        <context:property-placeholder location="/WEB-INF/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
 
        <import resource="spring/spring-jdbc.xml"></import>
