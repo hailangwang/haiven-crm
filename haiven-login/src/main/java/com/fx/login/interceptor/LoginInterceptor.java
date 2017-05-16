@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -18,13 +19,28 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
+        Boolean flag =false;
 
         if(ignoreURL!=null && ignoreURL.size()>0){
+           String url = httpServletRequest.getRequestURI();
+            System.out.println( httpServletRequest.getRequestURI());
+            System.out.println(httpServletRequest.getServletPath().toString());
 
-            System.out.println(httpServletRequest.getRequestURI());
 
+            if(ignoreURL.contains(url)){
+                flag = true;
+            }
         }
-        return true;
+        if(flag){
+            return true;
+        }else {
+            String contextPath=httpServletRequest.getContextPath();
+            String  uri=httpServletRequest.getServletPath().toString();
+            httpServletResponse.sendRedirect(contextPath+"/login/loginPage?redirectURL="
+                    + URLEncoder.encode(uri));
+            return  false;
+        }
+
     }
 
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {

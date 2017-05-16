@@ -5,6 +5,6 @@ package com.fx.login.dao;
  */
 public interface LoginDao {
 
-
+    public
 
 }
