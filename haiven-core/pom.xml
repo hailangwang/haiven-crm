@@ -11,9 +11,7 @@
 
     <artifactId>haiven-core</artifactId>
     <packaging>jar</packaging>
-    <!--<properties>-->
-        <!--<druid-version>1.0.8</druid-version>-->
-    <!--</properties>-->
+
 
    <dependencies>
        <dependency>

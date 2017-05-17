@@ -17,9 +17,8 @@ function checkUser(){
 	var redirectURL = $("#redirectURL").val();
 	var paras1 = {
 			
-				userCode : userName,
-				password : password,
-				redirectURL : redirectURL
+				userName : userName,
+				password : password
 			
 		};
 	if(checkNotNull(userName,password)){
@@ -30,7 +29,7 @@ function checkUser(){
             type: "post",
             contentType: "application/json;chartset=utf-8",
             cache : false,
-            url: project+"/login/checkUser",
+            url:"/login/checkUser",
             data: mini.encode(paras1),
             success: function (data) {
             	   var req = mini.decode(data);

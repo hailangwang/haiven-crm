@@ -7,8 +7,9 @@ public class StringUtils {
 
     public static  boolean isNotEmpty(String s){
 
-
-         return  false;
+        if(s==null ||s.trim().length()<0 )
+            return false;
+         return  true;
 
     }
 
@@ -24,5 +25,18 @@ public class StringUtils {
             }
             return false;
         }
+    }
+
+
+    public static String arrayToString(String[] array){
+        StringBuilder stringBuilder = new StringBuilder();
+        if(array!=null && array.length>0){
+            for(int i=0;i<array.length;i++){
+                stringBuilder.append(array[i]).append(ContantUtil.DOT);
+            }
+        }
+        return stringBuilder.toString();
+
+
     }
 }

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 <title>登录</title> 
 <link type="text/css" rel="stylesheet" href="${css}/login/login.css"></link>
-<%--<script type="text/javascript" src="${staticServerAddress}/boot.js"></script>--%>
+<script type="text/javascript" src="${scripts}/easyui/boot.js"></script>
 <script type="text/javascript" src="${scripts}/login/login.js"></script>
 <style type="text/css">
 fieldset input[type=text] { 

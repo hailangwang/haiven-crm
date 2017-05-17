@@ -53,7 +53,7 @@ public class PagingIntercept implements Interceptor {
     public void setProperties(Properties properties) {
         String className = (String) properties.get("dialect");
         if(StringUtils.isEmpty(className)) {
-            throw new MyBatisException("·ÖÒ³·½ÑÔ ²»ÄÜÎª¿Õ.");
+            throw new MyBatisException("åˆ†é¡µæ–¹è¨€ ä¸èƒ½ä¸ºç©º.");
         }
         Class<?> dialectClass = null;
         try {
@@ -65,7 +65,7 @@ public class PagingIntercept implements Interceptor {
     }
 
     /**
-     * ¸´ÖÆBoundSqlµÄMetaParameter
+     * ï¿½ï¿½ï¿½ï¿½BoundSqlï¿½ï¿½MetaParameter
      * <br>------------------------------<br>
      * @param lhs
      * @param rhs
@@ -89,7 +89,7 @@ public class PagingIntercept implements Interceptor {
         builder.fetchSize(ms.getFetchSize());
         builder.statementType(ms.getStatementType());
         builder.keyGenerator(ms.getKeyGenerator());
-        builder.keyProperty(ms.getKeyProperty());
+        builder.keyProperty(StringUtils.arrayToString(ms.getKeyProperties()));
         // setStatementTimeout()
         builder.timeout(ms.getTimeout());
         // setStatementResultMap()

@@ -36,6 +36,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         }else {
             String contextPath=httpServletRequest.getContextPath();
             String  uri=httpServletRequest.getServletPath().toString();
+//            httpServletResponse.sendRedirect(contextPath+"/login/loginPage");
             httpServletResponse.sendRedirect(contextPath+"/login/loginPage?redirectURL="
                     + URLEncoder.encode(uri));
             return  false;
