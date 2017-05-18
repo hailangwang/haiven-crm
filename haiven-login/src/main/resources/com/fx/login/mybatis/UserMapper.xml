@@ -5,7 +5,11 @@
 
 
 
+  <select id="getUser" parameterType="com.fx.login.entity.UserEntity" resultType="com.fx.login.entity.UserEntity">
 
+          SELECT password FROM  tb_user WHERE user_name=#{userName};
+
+  </select>
 
 </mapper>
 

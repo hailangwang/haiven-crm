@@ -19,7 +19,6 @@ public class WebFilter implements Filter {
     private boolean isIgnoreType;
 
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println(filterConfig.getServletContext().getServletContextName());
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -50,8 +49,13 @@ public class WebFilter implements Filter {
                 request.getSession().setAttribute("scripts",request.getContextPath() + "/scripts");
                 request.getSession().setAttribute("img",request.getContextPath() + "/images");
                 request.getSession().setAttribute("css",request.getContextPath() + "/styles");
-                request.getSession().setAttribute("projectName",request.getSession().getServletContext().getServletContextName());
-                System.out.println(request.getSession().getServletContext().getServletContextName());
+                request.getSession().setAttribute("projectName", request.getSession().getServletContext().getServletContextName());
+//                System.out.println(request.getSession().getServletContext().getServletContextName());
+//                System.out.println(request.getRequestURI());
+//                System.out.println(request.getServletPath());
+//                System.out.println(request.getContextPath());
+
+
 
         }
 

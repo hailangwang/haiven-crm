@@ -21,13 +21,15 @@ function checkUser(){
 				password : password
 			
 		};
+
+
 	if(checkNotNull(userName,password)){
 		 var messageid =  mini.loading("正在登录...", "正在登录");
 		 $(".wrap").hide();
 		  var project =  $("#projectName").val();
 		$.ajax({
             type: "post",
-            contentType: "application/json;chartset=utf-8",
+            contentType: "application/json",
             cache : false,
             url:"/login/checkUser",
             data: mini.encode(paras1),

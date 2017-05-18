@@ -9,11 +9,9 @@ import java.io.IOException;
 public class LoginFilter implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
-
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("进入过滤器");
         filterChain.doFilter(servletRequest,servletResponse);
     }
 
