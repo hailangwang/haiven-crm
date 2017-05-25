@@ -38,9 +38,9 @@ function checkUser(){
             	 setTimeout(function () {
                      mini.hideMessageBox(messageid);
                  }, 500);
-            	 if(req.errorcode!="true"){
+            	 if(req.model.status="fail"){
             		 $(".wrap").show();
-            		 $("#errorMsg").text(req.errorcode).css("color","red");
+            		 $("#errorMsg").text(req.model.message).css("color","red");
             	 }else{
             		 if(redirectURL==""){
             			 window.location = 'main';

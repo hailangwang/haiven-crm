@@ -86,7 +86,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="/WEB-INF/conf/mybatis.xml"></property>
         <property name="mapperLocations" value="classpath*:com/fx/**/mybatis/*.xml"></property>
-        <property name="dataSource" ref="dataSource"></property>
+        <property name="dataSource" ref="dataSourceDruid"></property>
     </bean>
 
     <!---->
@@ -138,8 +138,11 @@
         </property>
     </bean>
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.fx.login.dao" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    <bean id="mapperTransScannerConfigurer"
+          class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.fx.*.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
+
+
 </beans>

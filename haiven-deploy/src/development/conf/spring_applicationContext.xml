@@ -49,6 +49,4 @@
 
        <import resource="spring/spring-jdbc.xml"></import>
 
-
-
 </beans>

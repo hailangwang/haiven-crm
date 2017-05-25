@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public interface UserService {
 
-    public ModelAndView checkUser(UserEntity userEntity);
+    public String checkUser(UserEntity userEntity);
+
+
 
 }

@@ -23,7 +23,7 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping(value = "/checkUser")
-    public ModelAndView checkUser(@RequestBody UserEntity userEntity){
+    public String checkUser(@RequestBody UserEntity userEntity){
         return userService.checkUser(userEntity);
 
     }
