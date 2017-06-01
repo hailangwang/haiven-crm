@@ -57,7 +57,7 @@ public class PagingIntercept implements Interceptor {
         }
         Class<?> dialectClass = null;
         try {
-            dialectClass = ClassUtils.forName(className);
+            dialectClass = ClassUtils.forName(className,ClassLoader.getSystemClassLoader());
         } catch (Exception e) {
             throw new MyBatisException(e);
         }

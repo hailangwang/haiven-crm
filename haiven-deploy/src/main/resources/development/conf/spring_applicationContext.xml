@@ -46,7 +46,9 @@
        </bean>
        <!--加载properties文件-->
        <context:property-placeholder location="/WEB-INF/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/WEB-INF/conf/properties/redis.properties"  ignore-unresolvable="true"  />
 
        <import resource="spring/spring-jdbc.xml"></import>
+       <import resource="spring/spring-redis.xml"></import>
 
 </beans>
