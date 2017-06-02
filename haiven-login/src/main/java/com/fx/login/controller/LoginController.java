@@ -1,5 +1,6 @@
 package com.fx.login.controller;
 
+import com.fx.core.redis.RedisCacheStorage;
 import com.fx.login.entity.UserEntity;
 import com.fx.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,17 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RedisCacheStorage  redisCacheStorage;
+
     @ResponseBody
     @RequestMapping(value = "/checkUser")
     public String checkUser(@RequestBody UserEntity userEntity){
+
+
+        String a = (String) redisCacheStorage.get("wang");
+        System.out.println(a);
+
         return userService.checkUser(userEntity);
 
     }

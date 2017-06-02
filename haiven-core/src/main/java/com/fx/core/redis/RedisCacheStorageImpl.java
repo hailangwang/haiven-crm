@@ -6,11 +6,13 @@ import com.fx.core.redis.exception.RedisException;
 import com.fx.core.redis.service.RedisService;
 import com.fx.core.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import redis.clients.jedis.ShardedJedis;
 
 /**
  * Created by hlwang on 2017/6/1.
  */
+@Service
 public class RedisCacheStorageImpl<V, K> implements  RedisCacheStorage<V, K>{
 
     @Autowired
