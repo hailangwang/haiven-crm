@@ -24,14 +24,14 @@
                                  <constructor-arg name="host" value="${redis.host}"></constructor-arg>
                                  <constructor-arg name="port" value="${redis7001.port}"></constructor-arg>
                            </bean>
-               <!--             <bean class="org.springframework.data.redis.connection.RedisNode">
+                            <bean class="org.springframework.data.redis.connection.RedisNode">
                                 <constructor-arg name="host" value="${redis.host}"></constructor-arg>
                                 <constructor-arg name="port" value="${redis7002.port}"></constructor-arg>
                             </bean>
                             <bean class="org.springframework.data.redis.connection.RedisNode">
                                 <constructor-arg name="host" value="${redis.host}"></constructor-arg>
                                 <constructor-arg name="port" value="${redis7003.port}"></constructor-arg>
-                            </bean>-->
+                            </bean>
                     </set>
 
              </property>

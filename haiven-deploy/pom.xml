@@ -10,7 +10,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>haiven-depoly</artifactId>
+    <artifactId>haiven-deploy</artifactId>
     <packaging>war</packaging>
     <name>haiven-depoly Maven Webapp</name>
     <url>http://maven.apache.org</url>

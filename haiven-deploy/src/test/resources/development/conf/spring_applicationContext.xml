@@ -45,9 +45,9 @@
               <property name="suffix" value=".jsp"></property>
        </bean>
        <!--加载properties文件-->
-       <context:property-placeholder location="/WEB-INF/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
-       <context:property-placeholder location="/WEB-INF/conf/properties/redis.properties"  ignore-unresolvable="true"  />
-       <context:property-placeholder location="/WEB-INF/conf/properties/redis-cluster.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/development/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/development/conf/properties/redis.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/development/conf/properties/redis-cluster.properties"  ignore-unresolvable="true"  />
 
        <import resource="spring/spring-jdbc.xml"></import>
        <!-- 客户端redis集群 使用的jedis 客户端实现 -->

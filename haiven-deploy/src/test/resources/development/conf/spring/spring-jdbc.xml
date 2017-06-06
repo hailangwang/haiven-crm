@@ -84,7 +84,7 @@
 
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="/WEB-INF/conf/mybatis.xml"></property>
+        <property name="configLocation" value="/development/conf/mybatis.xml"></property>
         <property name="mapperLocations" value="classpath*:com/fx/login/mybatis/UserMapper.xml"></property>
         <property name="dataSource" ref="dataSourceDruid"></property>
     </bean>

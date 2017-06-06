@@ -9,10 +9,10 @@ import redis.clients.jedis.ShardedJedisPool;
 /**
  * Created by hlwang on 2017/6/1.
  */
-@Service("redisPoolProxy")
+
 public class RedisPoolProxyImpl implements  RedisPoolProxy {
 
-    @Autowired
+
     private ShardedJedisPool shardedJedisPool;
 
     public ShardedJedis getRedisClient() {

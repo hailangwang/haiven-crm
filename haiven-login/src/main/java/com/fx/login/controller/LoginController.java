@@ -25,8 +25,8 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private RedisCacheStorage  redisCacheStorage;
+ /*   @Autowired
+    private RedisCacheStorage  redisCacheStorage;*/
 
     @Autowired
     private  RedisTemplate redisTemplate;

@@ -12,10 +12,10 @@ import redis.clients.jedis.ShardedJedis;
 /**
  * Created by hlwang on 2017/6/1.
  */
-@Service
+
 public class RedisCacheStorageImpl<V, K> implements  RedisCacheStorage<V, K>{
 
-    @Autowired
+
     private RedisService redisService;
 
     public V get(K key) {
