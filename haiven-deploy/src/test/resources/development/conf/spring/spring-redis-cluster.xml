@@ -40,12 +40,37 @@
 
 
 
-      <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
 
+
+
+    <bean id="redisClusterFactory" class="com.fx.core.redis.cluster.RedisClusterFactory">
+        <property name="nodes">
+            <set>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${redis.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${redis7001.port}"></constructor-arg>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${redis.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${redis7002.port}"></constructor-arg>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${redis.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${redis7003.port}"></constructor-arg>
+                </bean>
+
+            </set>
+
+        </property>
+        <property name="maxAttempts" value="3"></property>
+        <property name="timeOut" value="3000"></property>
+        <property name="poolConfig" ref="jedisPoolConfigCluster"></property>
+    </bean>
+
+
+      <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
           <constructor-arg name="clusterConfig" ref="redisClusterConfiguration"></constructor-arg>
           <constructor-arg name="poolConfig" ref="jedisPoolConfigCluster"></constructor-arg>
-
-
       </bean>
 
     <bean  id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">

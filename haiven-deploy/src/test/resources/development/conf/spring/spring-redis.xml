@@ -20,17 +20,17 @@
                      <list>
                            <bean class="redis.clients.jedis.JedisShardInfo">
                                   <constructor-arg index="0" value="${redis.host}"></constructor-arg>
-                                  <constructor-arg index="1" value="${redis7001.port}"></constructor-arg>
+                                  <constructor-arg index="1" value="${redis7005.port}"></constructor-arg>
                                   <constructor-arg index="2" value="${redis7001.name}"></constructor-arg>
                            </bean>
                             <bean class="redis.clients.jedis.JedisShardInfo">
                                    <constructor-arg index="0" value="${redis.host}"></constructor-arg>
-                                   <constructor-arg index="1" value="${redis7003.port}"></constructor-arg>
+                                   <constructor-arg index="1" value="${redis7006.port}"></constructor-arg>
                                    <constructor-arg index="2" value="${redis7002.name}"></constructor-arg>
                             </bean>
                             <bean class="redis.clients.jedis.JedisShardInfo">
                                    <constructor-arg index="0" value="${redis.host}"></constructor-arg>
-                                   <constructor-arg index="1" value="${redis7003.port}"></constructor-arg>
+                                   <constructor-arg index="1" value="${redis7007.port}"></constructor-arg>
                                    <constructor-arg index="2" value="${redis7003.name}"></constructor-arg>
                             </bean>
                      </list>

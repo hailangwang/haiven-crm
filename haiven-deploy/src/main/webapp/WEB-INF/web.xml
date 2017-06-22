@@ -6,7 +6,8 @@
 
     <context-param>
         <param-name>log4jConfigLocation</param-name>
-        <param-value>/WEB-INF/conf/log4j/log4j.xml</param-value>
+        <!--<param-value>/WEB-INF/conf/log4j/ll.xml</param-value>-->
+        <param-value>/WEB-INF/conf/log4j/log4j.properties</param-value>
     </context-param>
 
   <listener>

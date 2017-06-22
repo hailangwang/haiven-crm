@@ -25,6 +25,11 @@
            <version>1.6.1</version>
        </dependency>
 
+   <!--    <dependency>
+           <groupId>log4j</groupId>
+           <artifactId>log4j</artifactId>
+           <version>1.2.17</version>
+       </dependency>-->
 
        <dependency>
            <groupId>com.fasterxml.jackson.core</groupId>
@@ -43,7 +48,7 @@
        <dependency>
            <groupId>org.springframework.data</groupId>
            <artifactId>spring-data-redis</artifactId>
-           <version>1.7.2.RELEASE</version>
+           <version>1.8.3.RELEASE</version>
        </dependency>
 
 

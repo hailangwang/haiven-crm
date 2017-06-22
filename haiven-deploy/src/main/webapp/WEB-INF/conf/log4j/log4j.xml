@@ -43,10 +43,10 @@
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
 		</layout>
-		<filter class="org.apache.log4j.varia.LevelRangeFilter">
-			<param name="LevelMin" value="DEBUG" />
-			<param name="LevelMax" value="DEBUG" />
-		</filter>
+		<!--<filter class="org.apache.log4j.varia.LevelRangeFilter">-->
+			<!--<param name="LevelMin" value="DEBUG" />-->
+			<!--<param name="LevelMax" value="DEBUG" />-->
+		<!--</filter>-->
 	</appender>
 	
 	<!-- SQL文件语句记录  -->
@@ -62,10 +62,17 @@
 			<param name="LevelMin" value="DEBUG" />
 			<param name="LevelMax" value="DEBUG" />
 		</filter>
-		</appender>
+	</appender>
+
+	<category name="java.sql">
+		  <priority value="debug" />
+	</category>
+	<category name="com.ibatis">
+        <priority value="debug" />
+	</category>
 
 	<root>
-		<level value="info"/>
+		<priority value="DEBUG"/>
 		 <appender-ref ref="Access" />  
 		 <appender-ref ref="STDOUT" />  
 		<appender-ref ref="Error" />

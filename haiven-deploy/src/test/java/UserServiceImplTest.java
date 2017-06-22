@@ -15,18 +15,20 @@ import static org.junit.Assert.*;
 /**
  * Created by hlwang on 2017/6/6.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:development/conf/spring_applicationContext.xml" })
-public class UserServiceImplTest extends TestCase {
+public class UserServiceImplTest extends BaseTest {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LoginController loginController;
     @Test
     public void testCheckUser() throws Exception {
+
         UserEntity userEntity = new UserEntity();
         userEntity.setUserName("wang");
         userEntity.setPassword("123");
-        String s = userService.checkUser(userEntity);
+        String s = loginController.checkUser(userEntity);
 //        String s =  userService.checkUser(userEntity);
         System.out.println(s);
     }

@@ -1,8 +1,10 @@
 package com.fx.login.controller;
 
 import com.fx.core.redis.RedisCacheStorage;
+import com.fx.core.redis.cluster.RedisClusterFactory;
 import com.fx.login.entity.UserEntity;
 import com.fx.login.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -22,11 +24,13 @@ public class LoginController {
 
     private final String path = "/login/";
 
+    private static  final Logger logger = Logger.getLogger(LoginController.class);
+
     @Autowired
     private UserService userService;
 
- /*   @Autowired
-    private RedisCacheStorage  redisCacheStorage;*/
+   @Autowired
+    private RedisClusterFactory redisClusterFactory;
 
     @Autowired
     private  RedisTemplate redisTemplate;
@@ -35,12 +39,15 @@ public class LoginController {
     @RequestMapping(value = "/checkUser")
     public String checkUser(@RequestBody UserEntity userEntity){
 
-        String s  = (String) redisTemplate.opsForValue().get("wang");
-        System.out.println(s);
-        String s2  = (String) redisTemplate.opsForValue().get("lang2");
 
-        System.out.println(s2);
+//        redisTemplate.opsForValue().set("wang","wang");
+//        redisTemplate.opsForValue().set("hai", "hai");
+//        redisTemplate.opsForValue().set("lang","lang");
+//        System.out.println( redisTemplate.opsForValue().get("wang"));
 
+//        redisClusterFactory.getObject()
+
+      logger.info("111");
         return userService.checkUser(userEntity);
 
     }

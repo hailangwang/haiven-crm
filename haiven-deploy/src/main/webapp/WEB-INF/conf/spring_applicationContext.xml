@@ -45,14 +45,14 @@
               <property name="suffix" value=".jsp"></property>
        </bean>
        <!--加载properties文件-->
-       <context:property-placeholder location="/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
-       <context:property-placeholder location="/conf/properties/redis.properties"  ignore-unresolvable="true"  />
-       <context:property-placeholder location="/conf/properties/redis-cluster.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/WEB-INF/conf/properties/jdbc.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/WEB-INF/conf/properties/redis.properties"  ignore-unresolvable="true"  />
+       <context:property-placeholder location="/WEB-INF/conf/properties/redis-cluster.properties"  ignore-unresolvable="true"  />
 
-       <import resource="../../../test/resources/development/conf/spring/spring-jdbc.xml"></import>
+       <import resource="spring/spring-jdbc.xml"></import>
        <!-- 客户端redis集群 使用的jedis 客户端实现 -->
        <!--<import resource="spring/spring-redis.xml"></import>-->
        <!--服务器端reids集群  需要在redis服务器端配置-->
-       <import resource="../../../test/resources/development/conf/spring/spring-redis-cluster.xml"></import>
+       <import resource="spring/spring-redis-cluster.xml"></import>
 
 </beans>
