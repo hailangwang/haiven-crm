@@ -1,10 +1,13 @@
 package com.fx.login.controller;
 
+
 import com.fx.core.redis.RedisCacheStorage;
 import com.fx.core.redis.cluster.RedisClusterFactory;
 import com.fx.login.entity.UserEntity;
 import com.fx.login.service.UserService;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.xml.ws.handler.LogicalHandler;
 
 /**
  * Created by hlwang on 2017/5/11.
@@ -24,7 +28,7 @@ public class LoginController {
 
     private final String path = "/login/";
 
-    private static  final Logger logger = Logger.getLogger(LoginController.class);
+    private static  final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserService userService;
